@@ -1,0 +1,112 @@
+\documentclass[9pt]{scrartcl}
+
+\usepackage{geometry}
+\geometry{hmargin=0.75cm,top=1cm,bottom=1.5cm}
+\geometry{a4paper}
+\geometry{landscape}
+
+\usepackage[parfill]{parskip}
+\usepackage[utf8x]{inputenc}
+\usepackage[frenchb,ngerman]{babel}
+\usepackage{multicol}
+\usepackage{comment}
+
+\usepackage{array}
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+%packages for frames
+\usepackage{xcolor}     % for colour
+\usepackage{mdframed}   % for framing
+
+%new theorem environment
+
+\definecolor{mybgcolor}{rgb}{1,1,0.5}
+
+\newmdtheoremenv[%
+skipabove=5,skipbelow=5,%
+linecolor=gray,%
+leftmargin=20,%
+rightmargin=20,%
+%innertopmargin=20pt,%
+%usetwoside=false,%
+backgroundcolor=mybgcolor!40,%
+innertopmargin=0pt,%
+ntheorem]{mydef}{Definition}
+
+\newmdtheoremenv[%
+skipabove=5,%
+skipbelow=5,%
+linecolor=gray,leftmargin=20,%
+rightmargin=20,%
+backgroundcolor=mybgcolor!40,%
+innertopmargin=0pt,%
+ntheorem]{mysatz}{Satz}
+
+\def\Item(#1){\item[\llap{(}$-$] #1)}
+
+\newcommand\N{\mathbb{N}}
+\newcommand\Z{\mathbb{Z}}
+\newcommand\Q{\mathbb{Q}}
+\newcommand\R{\mathbb{R}}
+\newcommand\I{\mathbb{I}}
+\newcommand\C{\mathbb{C}}
+\newcommand\sech{\textrm{sech}}
+\newcommand\dif[1]{\mathop{\textrm{d}#1}}
+\newcommand{\unit}[1]{\ensuremath{\, \mathrm{#1}}}
+
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{3}
+
+
+\let\stdsection\section
+\renewcommand\section{\stdsection}%\newpage\stdsection}
+\renewcommand{\labelitemi}{$-$}
+
+
+
+\title{ANALYSIS ZUSAMMENFASSUNG}
+\subtitle{Analysis II}
+\author{\copyright Lukas Walker}
+\date{ETH, HS18}
+
+
+\begin{document}
+
+\maketitle
+\begin{multicols}{2}
+	\tableofcontents
+\end{multicols}
+	
+\twocolumn
+\columnseprule 1pt
+    
+\section{Differential Equations}
+
+\subsection{Linear Differential Equations}
+			
+    \subsubsection{Main Properties}
+    
+    \begin{enumerate}
+        \item Form (Def. 2.2.1): $y^{(k)} + a_{k-1}y^{(k-1)} + ... + a_{1}y' + a_0y = b$, where $a_i, b$ are functions $\in \C$
+        \item For $b=0$ the LDE is said to be homogenous.
+        \item Linearity: $D(z_1f_1 + z_2f_2) = z_1D(f_1) + z_2D(f_2)$
+    \end{enumerate}
+    
+    \subsubsection{Main Theoretical Results}
+    
+    From theorem 2.2.3.
+    Let $I\subset \R$ be an open interval and $k \geq 1$ a positive integer and let $y^{(k)} + a_{k-1}y^{(k-1)} + ... + a_1y' + a_0y = 0$ be a linear differential equation over $I$ with continuous coefficients.
+    
+    \begin{enumerate}
+        \item The set $S$ of $k$-times differentiable solutions $f:I \to\C$ of equations is a complex vector space which is a subspace of the space complex-valued functions on I.
+        \subitem if $a_i$ are real-valued, $S$ of real-valued solutions is a real vector space.
+        \item the dimension of $S$ is $k$. For any choice of $x_0$ and any $(y_0,...,y_{k-1})$ there exists a unique $f\in S$ such that $f(x_0) = y_0, f'(x_0) = y_1, ..., f^{k-1}(x_0) = y_{k-1}$
+        \item Let $b$ be a continuous function on $I$.. There exists a solution $f_0$ to the inhomogenous equation $y^(k) + a_{k-1}y^{(k-1)} + ... + a_1y' + a_0y = b$ and the set $S_b$ is the set of functions $f + f_0$ where $f \in S$.
+    \end{enumerate}
+    
+    
+\end{document}  
